@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Inter:wght@400;600;700&display=swap');
+
+    @tailwind base;
+    @tailwind components;
+    @tailwind utilities;
+
+    @layer base {
+      :root {
+        --background: 220 40% 6%; /* Darker blue-ish gray */
+        --foreground: 210 40% 98%;
+
+        --card: 220 30% 10%;
+        --card-foreground: 210 40% 98%;
+
+        --popover: 220 40% 6%;
+        --popover-foreground: 210 40% 98%;
+
+        --primary: 197 100% 47%; /* Nobreeng Blue from logo */
+        --primary-foreground: 210 40% 98%; /* White text on blue */
+        --primary-blue: 197 100% 47%; /* Explicit Nobreeng Blue */
+        --nobreeng-dark-blue: 203 44% 23%; /* Hex: #244451 */
+
+
+        --secondary: 217.2 32.6% 17.5%;
+        --secondary-foreground: 210 40% 98%;
+
+        --muted: 217.2 32.6% 17.5%;
+        --muted-foreground: 215 20.2% 65.1%;
+
+        --accent: 51 100% 50%; /* Nobreeng Gold from logo */
+        --accent-foreground: 220 40% 6%; /* Dark text on gold */
+        --accent-gold: 51 100% 50%; /* Explicit Nobreeng Gold */
+        
+        --destructive: 0 62.8% 30.6%;
+        --destructive-foreground: 210 40% 98%;
+
+        --border: 197 100% 25%; /* Darker shade of primary blue for borders */
+        --input: 220 30% 15%; /* Slightly lighter than card for input fields */
+        --ring: 197 100% 57%; /* Lighter shade of primary blue for focus rings */
+
+        --radius: 0.5rem;
+      }
+
+      .dark {
+        /* Same as :root for a consistent dark theme based on logo */
+        --background: 220 40% 6%;
+        --foreground: 210 40% 98%;
+        --card: 220 30% 10%;
+        --card-foreground: 210 40% 98%;
+        --popover: 220 40% 6%;
+        --popover-foreground: 210 40% 98%;
+        --primary: 197 100% 47%;
+        --primary-foreground: 210 40% 98%;
+        --primary-blue: 197 100% 47%;
+        --nobreeng-dark-blue: 203 44% 23%;
+        --secondary: 217.2 32.6% 17.5%;
+        --secondary-foreground: 210 40% 98%;
+        --muted: 217.2 32.6% 17.5%;
+        --muted-foreground: 215 20.2% 65.1%;
+        --accent: 51 100% 50%;
+        --accent-foreground: 220 40% 6%;
+        --accent-gold: 51 100% 50%;
+        --destructive: 0 62.8% 30.6%;
+        --destructive-foreground: 210 40% 98%;
+        --border: 197 100% 25%;
+        --input: 220 30% 15%;
+        --ring: 197 100% 57%;
+      }
+    }
+
+    @layer base {
+      * {
+        @apply border-border;
+      }
+      body {
+        @apply bg-background text-foreground;
+        font-family: 'Inter', sans-serif;
+      }
+      h1, h2, h3, h4, h5, h6 {
+        @apply font-montserrat;
+      }
+    }
+
+    /* Scrollbar styles for a more modern look */
+    ::-webkit-scrollbar {
+      width: 8px;
+      height: 8px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: hsl(var(--background) / 0.5);
+      border-radius: 10px;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: hsl(var(--primary) / 0.4); /* Use primary blue for scrollbar thumb */
+      border-radius: 10px;
+      border: 2px solid transparent;
+      background-clip: content-box;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      background: hsl(var(--primary) / 0.6);
+    }
